@@ -401,6 +401,29 @@
       text-shadow: 0 1px 12px rgba(0, 0, 0, 0.3);
     }
 
+    .btn-wa-hero {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #fff;
+      background: linear-gradient(135deg, #1a3a5c 0%, #2a5a8c 50%, #1a3a5c 100%);
+      padding: 16px 42px;
+      border: 1px solid rgba(143, 163, 184, 0.3);
+      cursor: pointer;
+      transition: all 0.35s;
+      text-decoration: none;
+    }
+    .btn-wa-hero:hover {
+      background: linear-gradient(135deg, #1e4470 0%, #3470a8 50%, #1e4470 100%);
+      border-color: rgba(143, 163, 184, 0.5);
+      box-shadow: 0 8px 32px rgba(42, 90, 140, 0.25);
+    }
+
     .hero-ctas {
       display: flex;
       gap: 14px;
@@ -1825,32 +1848,27 @@
   </nav>
 
   <section class="hero" id="hero">
-    <div class="hero-bg-layer" id="heroBg">
-
-      <iframe class="hero-bg-video"
-        src="https://www.youtube.com/embed/Thm9gH2Nhxg?autoplay=1&mute=1&controls=0&loop=1&playlist=Thm9gH2Nhxg&rel=0&showinfo=0&modestbranding=1&playsinline=1"
-        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-    </div>
+    <div class="hero-bg-layer" id="heroBg"></div>
+    <iframe class="hero-bg-video"
+      src="https://www.youtube.com/embed/Thm9gH2Nhxg?autoplay=1&mute=1&controls=0&loop=1&playlist=Thm9gH2Nhxg&rel=0&showinfo=0&modestbranding=1&playsinline=1"
+      frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     <div class="hero-overlay"></div>
     <div class="hero-grain"></div>
     <div class="container hero-content" id="heroContent">
       <p class="t-label a-rise" style="transition-delay:0.6s">Alpha Vessel by INSAE Wellness</p>
       <h1 class="t-xl a-rise" style="margin-top:16px;transition-delay:0.8s">Cold plunge,<br><em>elevated.</em></h1>
 
-      <p class="hero-sub a-rise" style="transition-delay:1s">El sistema de inmersión en frío con enfriamiento integrado
-        que redefine la recuperación, el ritual y la cultura del bienestar en Guadalajara.</p>
 
       <div class="hero-ctas a-rise" style="transition-delay:1.2s">
         <a href="https://wa.me/523310000000?text=Hola%2C%20me%20interesa%20Alpha%20Vessel" target="_blank"
-          class="btn-p">
+          class="btn-wa-hero">
           <svg class="wa-icon" viewBox="0 0 24 24">
             <path
               d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
             <path
               d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.612.638l4.716-1.244A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.24 0-4.31-.726-5.993-1.956l-.418-.313-3.06.807.822-3.002-.344-.447A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
           </svg>
-          Escríbenos por WhatsApp</a>
+          Cotiza tu tina ya</a>
         <a href="#pinned" class="btn-s">Descubrir</a>
       </div>
       <div class="hero-badge a-rise" style="transition-delay:1.4s">Lote limitado — 10 unidades en Guadalajara</div>
@@ -1860,43 +1878,7 @@
     </div>
   </section>
 
-  <section class="editorial" id="info">
-    <div class="container">
-      <div class="editorial-grid">
-        <div class="editorial-img a-mask">
-          <img src="assets/images/a15.jpg" alt="Alpha Vessel Cold Plunge" loading="lazy"
-            style="aspect-ratio:4/5;object-fit:cover;">
-        </div>
-        <div>
-          <div class="section-line a-fade"></div>
-          <p class="t-label a-rise">Por qué Alpha Vessel</p>
-          <h2 class="t-lg a-rise d1" style="margin-top:14px">Esto no es<br>una tina con hielo.</h2>
-          <p class="t-body a-rise d2" style="margin-top:18px;max-width:440px">Alpha Vessel es un sistema de enfriamiento
-            mecánico integrado. Sin bolsas de hielo. Sin mantenimiento diario. Sin improvisación. Un objeto diseñado
-            para funcionar con la misma seriedad que tu entrenamiento.</p>
-          <div class="ed-features a-stagger" style="margin-top:32px">
-            <div class="ed-feat">
-              <h4>Sistema de enfriamiento integrado</h4>
-              <p>Temperatura controlada digitalmente hasta 3°C. Listo cuando tú lo estés.</p>
-            </div>
-            <div class="ed-feat">
-              <h4>Calidad de objeto premium</h4>
-              <p>Acero inoxidable, exterior de madera oscura, bandas metálicas. Diseñado para elevar cualquier espacio.
-              </p>
-            </div>
-            <div class="ed-feat">
-              <h4>Filtración y desinfección</h4>
-              <p>Sistema integrado para uso continuo. Alineado a guías de salud pública para uso compartido.</p>
-            </div>
-            <div class="ed-feat">
-              <h4>Plug and play</h4>
-              <p>Corriente estándar 110V. Conecta, llena, configura. Entrega directa en Guadalajara.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+
 
   <section class="pinned-section" id="pinned">
     <div class="pinned-track">
@@ -2266,7 +2248,7 @@
         nav.classList.toggle('scrolled', scrollY > 60);
         if (scrollY < window.innerHeight * 1.5) {
           if (heroBg) heroBg.style.transform = 'translate3d(0,' + (scrollY * 0.35) + 'px,0)';
-          if (heroBgImg) heroBgImg.style.transform = 'scale(' + (1.1 + scrollY * 0.0001) + ')';
+          if (heroBgImg) heroBgImg.style.transform = 'translate(-50%, -50%) scale(' + (1.1 + scrollY * 0.0001) + ')';
           if (heroContent) heroContent.style.transform = 'translate3d(0,' + (scrollY * 0.15) + 'px,0)';
           if (heroContent) heroContent.style.opacity = Math.max(0, 1 - scrollY / (window.innerHeight * 0.7));
         }
