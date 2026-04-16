@@ -1926,70 +1926,6 @@
     </div>
   </section>
 
-  <!-- ═══ CUSTOMER CREDIBILITY CAROUSEL ═══ -->
-  <section class="customers" id="customers">
-    <div class="customers-top">
-      <span class="customers-label">Clientes Alpha Vessel</span>
-      <span class="customers-drag">
-        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        Desliza para explorar
-      </span>
-    </div>
-    <div class="customers-track" id="custTrack">
-      <!-- card 1 -->
-      <div class="customer-card">
-        <div class="cc-avatar"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face" alt="Marco R." loading="lazy"></div>
-        <span class="cc-name">Marco R.</span>
-        <span class="cc-loc">Guadalajara, JAL</span>
-        <p class="cc-quote">Después de 3 semanas, mi recuperación post-entrenamiento cambió por completo. Duermo mejor, rindo más. No es lujo — es infraestructura.</p>
-      </div>
-      <!-- card 2 -->
-      <div class="customer-card">
-        <div class="cc-avatar"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&crop=face" alt="Sofía C." loading="lazy"></div>
-        <span class="cc-name">Sofía C.</span>
-        <span class="cc-loc">Ciudad de México</span>
-        <p class="cc-quote">Lo instalamos en el gym y los miembros no paran de preguntar por él. En 2 meses ya se pagó solo. El diseño eleva todo el espacio.</p>
-      </div>
-      <!-- card 3 -->
-      <div class="customer-card">
-        <div class="cc-avatar"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&crop=face" alt="Daniel L." loading="lazy"></div>
-        <span class="cc-name">Daniel L.</span>
-        <span class="cc-loc">Monterrey, NL</span>
-        <p class="cc-quote">Tenía dudas por el precio, pero la calidad de construcción y el sistema de enfriamiento son de otro nivel. Cero arrepentimiento.</p>
-      </div>
-      <!-- card 4 -->
-      <div class="customer-card">
-        <div class="cc-avatar"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face" alt="Andrea V." loading="lazy"></div>
-        <span class="cc-name">Andrea V.</span>
-        <span class="cc-loc">Querétaro, QRO</span>
-        <p class="cc-quote">Mis clientes del spa lo aman. La temperatura se mantiene perfecta todo el día. El ROI fue mucho más rápido de lo que esperaba.</p>
-      </div>
-      <!-- card 5 -->
-      <div class="customer-card">
-        <div class="cc-avatar"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face" alt="Javier P." loading="lazy"></div>
-        <span class="cc-name">Javier P.</span>
-        <span class="cc-loc">Mérida, YUC</span>
-        <p class="cc-quote">Después de probarlo en un hotel boutique en Tulum, lo traje a mi casa. La diferencia en calidad de sueño es absurda.</p>
-      </div>
-      <!-- card 6 -->
-      <div class="customer-card">
-        <div class="cc-avatar"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&h=200&fit=crop&crop=face" alt="Roberto M." loading="lazy"></div>
-        <span class="cc-name">Roberto M.</span>
-        <span class="cc-loc">León, GTO</span>
-        <p class="cc-quote">Lo compré para mi centro de CrossFit. Los atletas hacen fila para usarlo. Ya recuperé la inversión en el tercer mes.</p>
-      </div>
-      <!-- card 7 -->
-      <div class="customer-card">
-        <div class="cc-avatar"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&h=200&fit=crop&crop=face" alt="Karla T." loading="lazy"></div>
-        <span class="cc-name">Karla T.</span>
-        <span class="cc-loc">Puebla, PUE</span>
-        <p class="cc-quote">La entrega fue impecable y la instalación tomó 20 minutos. Cada mañana a las 5am me meto 3 minutos. Ritual no negociable.</p>
-      </div>
-    </div>
-  </section>
-
-
-
   <section class="pinned-section" id="pinned">
     <div class="pinned-track">
       <div class="pinned-visual">
@@ -2459,31 +2395,7 @@
       }
     });
   </script>
-  <script>
-    /* ── Customer carousel auto-scroll + drag ── */
-    (function(){
-      var track=document.getElementById('custTrack');
-      if(!track) return;
-      var speed=.35, pos=0, dragging=false, startX=0, startScroll=0, rafId=null, paused=false;
-      function autoScroll(){
-        if(!dragging&&!paused){
-          pos+=speed;
-          if(pos>=track.scrollWidth-track.parentElement.offsetWidth) pos=0;
-          track.style.transform='translateX(-'+pos+'px)';
-        }
-        rafId=requestAnimationFrame(autoScroll);
-      }
-      rafId=requestAnimationFrame(autoScroll);
-      track.addEventListener('mousedown',function(e){dragging=true;startX=e.pageX;startScroll=pos;track.classList.add('dragging');});
-      window.addEventListener('mousemove',function(e){if(!dragging)return;var dx=e.pageX-startX;pos=startScroll-dx;if(pos<0)pos=0;var max=track.scrollWidth-track.parentElement.offsetWidth;if(pos>max)pos=max;track.style.transform='translateX(-'+pos+'px)';});
-      window.addEventListener('mouseup',function(){if(dragging){dragging=false;track.classList.remove('dragging');}});
-      track.addEventListener('touchstart',function(e){dragging=true;startX=e.touches[0].pageX;startScroll=pos;},{passive:true});
-      track.addEventListener('touchmove',function(e){if(!dragging)return;var dx=e.touches[0].pageX-startX;pos=startScroll-dx;if(pos<0)pos=0;var max=track.scrollWidth-track.parentElement.offsetWidth;if(pos>max)pos=max;track.style.transform='translateX(-'+pos+'px)';},{passive:true});
-      track.addEventListener('touchend',function(){dragging=false;});
-      track.parentElement.addEventListener('mouseenter',function(){paused=true;});
-      track.parentElement.addEventListener('mouseleave',function(){paused=false;});
-    })();
-  </script>
+
   <a href="https://wa.me/523325520551?text=Hola%2C%20me%20interesa%20Alpha%20Vessel" target="_blank" class="btn-p mobile-sticky-cta">
     Contacta a nuestro equipo de ventas
   </a>
