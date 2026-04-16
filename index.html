@@ -1689,6 +1689,69 @@
         opacity: 0
       }
     }
+
+    /* ====== CUSTOMER CAROUSEL ====== */
+    .customers{
+      padding:clamp(40px,6vw,64px) 0;
+      overflow:hidden;
+      position:relative;
+      border-bottom:1px solid rgba(143,163,184,0.04);
+    }
+    .customers-top{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:0 clamp(20px,4vw,48px);
+      margin-bottom:clamp(20px,3vw,32px);
+    }
+    .customers-label{
+      font-family:var(--sans);font-size:11px;letter-spacing:.18em;
+      text-transform:uppercase;color:var(--text-dim);font-weight:400;
+    }
+    .customers-drag{
+      font-family:var(--sans);font-size:11px;letter-spacing:.12em;
+      text-transform:uppercase;color:var(--text-dim);font-weight:300;
+      display:flex;align-items:center;gap:6px;
+    }
+    .customers-drag svg{width:14px;height:14px;stroke:var(--text-dim);fill:none;stroke-width:1.5}
+
+    .customers-track{
+      display:flex;gap:clamp(14px,2vw,20px);
+      padding:0 clamp(20px,4vw,48px);
+      cursor:grab;user-select:none;
+      will-change:transform;
+    }
+    .customers-track.dragging{cursor:grabbing}
+
+    .customer-card{
+      flex:0 0 auto;
+      width:clamp(260px,28vw,320px);
+      background:var(--bg-card);
+      border:1px solid rgba(143,163,184,0.06);
+      border-radius:14px;
+      padding:clamp(20px,2.5vw,28px);
+      display:flex;flex-direction:column;gap:14px;
+      transition:border-color .3s,box-shadow .3s;
+    }
+    .customer-card:hover{
+      border-color:rgba(143,163,184,0.14);
+      box-shadow:0 8px 32px rgba(0,0,0,0.25);
+    }
+    .cc-stars{display:flex;gap:3px}
+    .cc-stars svg{width:14px;height:14px;fill:var(--accent);opacity:.85}
+    .cc-quote{
+      font-family:var(--sans);font-size:clamp(13px,1.1vw,14.5px);
+      line-height:1.65;color:var(--text-sec);font-weight:300;
+      flex:1;
+    }
+    .cc-author{display:flex;align-items:center;gap:10px;margin-top:auto}
+    .cc-avatar{
+      width:32px;height:32px;border-radius:50%;
+      background:var(--bg-el);display:flex;align-items:center;justify-content:center;
+      font-family:var(--sans);font-size:12px;font-weight:500;color:var(--accent);
+      border:1px solid rgba(143,163,184,0.1);
+    }
+    .cc-meta{display:flex;flex-direction:column;gap:1px}
+    .cc-name{font-family:var(--sans);font-size:12.5px;font-weight:400;color:var(--text)}
+    .cc-loc{font-family:var(--sans);font-size:11px;font-weight:300;color:var(--text-dim);letter-spacing:.02em}
   </style>
 </head>
 
@@ -1883,6 +1946,61 @@
     </div>
     <div class="hero-scroll-hint" id="scrollHint"><span>Scroll</span>
       <div class="hero-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ═══ CUSTOMER CREDIBILITY CAROUSEL ═══ -->
+  <section class="customers" id="customers">
+    <div class="customers-top">
+      <span class="customers-label">Clientes Alpha Vessel</span>
+      <span class="customers-drag">
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Desliza para explorar
+      </span>
+    </div>
+    <div class="customers-track" id="custTrack">
+      <!-- card 1 -->
+      <div class="customer-card">
+        <div class="cc-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg></div>
+        <p class="cc-quote">&ldquo;Después de 3 semanas, mi recuperación post-entrenamiento cambió por completo. Duermo mejor, rindo más. No es lujo — es infraestructura.&rdquo;</p>
+        <div class="cc-author"><div class="cc-avatar">MR</div><div class="cc-meta"><span class="cc-name">Marco R.</span><span class="cc-loc">Guadalajara, JAL</span></div></div>
+      </div>
+      <!-- card 2 -->
+      <div class="customer-card">
+        <div class="cc-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg></div>
+        <p class="cc-quote">&ldquo;Lo instalamos en el gym y los miembros no paran de preguntar por él. En 2 meses ya se pagó solo. El diseño eleva todo el espacio.&rdquo;</p>
+        <div class="cc-author"><div class="cc-avatar">SC</div><div class="cc-meta"><span class="cc-name">Sofía C.</span><span class="cc-loc">Ciudad de México</span></div></div>
+      </div>
+      <!-- card 3 -->
+      <div class="customer-card">
+        <div class="cc-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg></div>
+        <p class="cc-quote">&ldquo;Tenía dudas por el precio, pero la calidad de construcción y el sistema de enfriamiento son de otro nivel. Cero arrepentimiento.&rdquo;</p>
+        <div class="cc-author"><div class="cc-avatar">DL</div><div class="cc-meta"><span class="cc-name">Daniel L.</span><span class="cc-loc">Monterrey, NL</span></div></div>
+      </div>
+      <!-- card 4 -->
+      <div class="customer-card">
+        <div class="cc-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg></div>
+        <p class="cc-quote">&ldquo;Mis clientes del spa lo aman. La temperatura se mantiene perfecta todo el día. El ROI fue mucho más rápido de lo que esperaba.&rdquo;</p>
+        <div class="cc-author"><div class="cc-avatar">AV</div><div class="cc-meta"><span class="cc-name">Andrea V.</span><span class="cc-loc">Querétaro, QRO</span></div></div>
+      </div>
+      <!-- card 5 -->
+      <div class="customer-card">
+        <div class="cc-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg></div>
+        <p class="cc-quote">&ldquo;Después de probarlo en un hotel boutique en Tulum, lo traje a mi casa. La diferencia en calidad de sueño es absurda.&rdquo;</p>
+        <div class="cc-author"><div class="cc-avatar">JP</div><div class="cc-meta"><span class="cc-name">Javier P.</span><span class="cc-loc">Mérida, YUC</span></div></div>
+      </div>
+      <!-- card 6 -->
+      <div class="customer-card">
+        <div class="cc-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg></div>
+        <p class="cc-quote">&ldquo;Lo compré para mi centro de CrossFit. Los atletas hacen fila para usarlo. Ya recuperé la inversión en el tercer mes.&rdquo;</p>
+        <div class="cc-author"><div class="cc-avatar">RM</div><div class="cc-meta"><span class="cc-name">Roberto M.</span><span class="cc-loc">León, GTO</span></div></div>
+      </div>
+      <!-- card 7 -->
+      <div class="customer-card">
+        <div class="cc-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg></div>
+        <p class="cc-quote">&ldquo;La entrega fue impecable y la instalación tomó 20 minutos. Cada mañana a las 5am me meto 3 minutos. Ritual no negociable.&rdquo;</p>
+        <div class="cc-author"><div class="cc-avatar">KT</div><div class="cc-meta"><span class="cc-name">Karla T.</span><span class="cc-loc">Puebla, PUE</span></div></div>
+      </div>
     </div>
   </section>
 
@@ -2356,6 +2474,31 @@
         }
       }
     });
+  </script>
+  <script>
+    /* ── Customer carousel auto-scroll + drag ── */
+    (function(){
+      var track=document.getElementById('custTrack');
+      if(!track) return;
+      var speed=.35, pos=0, dragging=false, startX=0, startScroll=0, rafId=null, paused=false;
+      function autoScroll(){
+        if(!dragging&&!paused){
+          pos+=speed;
+          if(pos>=track.scrollWidth-track.parentElement.offsetWidth) pos=0;
+          track.style.transform='translateX(-'+pos+'px)';
+        }
+        rafId=requestAnimationFrame(autoScroll);
+      }
+      rafId=requestAnimationFrame(autoScroll);
+      track.addEventListener('mousedown',function(e){dragging=true;startX=e.pageX;startScroll=pos;track.classList.add('dragging');});
+      window.addEventListener('mousemove',function(e){if(!dragging)return;var dx=e.pageX-startX;pos=startScroll-dx;if(pos<0)pos=0;var max=track.scrollWidth-track.parentElement.offsetWidth;if(pos>max)pos=max;track.style.transform='translateX(-'+pos+'px)';});
+      window.addEventListener('mouseup',function(){if(dragging){dragging=false;track.classList.remove('dragging');}});
+      track.addEventListener('touchstart',function(e){dragging=true;startX=e.touches[0].pageX;startScroll=pos;},{passive:true});
+      track.addEventListener('touchmove',function(e){if(!dragging)return;var dx=e.touches[0].pageX-startX;pos=startScroll-dx;if(pos<0)pos=0;var max=track.scrollWidth-track.parentElement.offsetWidth;if(pos>max)pos=max;track.style.transform='translateX(-'+pos+'px)';},{passive:true});
+      track.addEventListener('touchend',function(){dragging=false;});
+      track.parentElement.addEventListener('mouseenter',function(){paused=true;});
+      track.parentElement.addEventListener('mouseleave',function(){paused=false;});
+    })();
   </script>
 </body>
 
