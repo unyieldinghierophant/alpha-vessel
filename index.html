@@ -1726,32 +1726,40 @@
       width:clamp(260px,28vw,320px);
       background:var(--bg-card);
       border:1px solid rgba(143,163,184,0.06);
-      border-radius:14px;
-      padding:clamp(20px,2.5vw,28px);
-      display:flex;flex-direction:column;gap:14px;
+      border-radius:16px;
+      padding:clamp(28px,3vw,36px) clamp(20px,2.5vw,28px);
+      display:flex;flex-direction:column;align-items:center;
+      text-align:center;gap:16px;
       transition:border-color .3s,box-shadow .3s;
     }
     .customer-card:hover{
       border-color:rgba(143,163,184,0.14);
       box-shadow:0 8px 32px rgba(0,0,0,0.25);
     }
-    .cc-stars{display:flex;gap:3px}
-    .cc-stars svg{width:14px;height:14px;fill:var(--accent);opacity:.85}
+    .cc-avatar{
+      width:clamp(80px,10vw,110px);height:clamp(80px,10vw,110px);
+      border-radius:50%;overflow:hidden;
+      border:3px solid rgba(143,163,184,0.12);
+      flex-shrink:0;
+    }
+    .cc-avatar img{
+      width:100%;height:100%;object-fit:cover;
+      display:block;
+    }
+    .cc-name{
+      font-family:var(--sans);font-size:clamp(15px,1.3vw,17px);
+      font-weight:500;color:var(--text);line-height:1.2;
+    }
+    .cc-loc{
+      font-family:var(--sans);font-size:11px;font-weight:300;
+      color:var(--text-dim);letter-spacing:.04em;
+      margin-top:-8px;
+    }
     .cc-quote{
       font-family:var(--sans);font-size:clamp(13px,1.1vw,14.5px);
-      line-height:1.65;color:var(--text-sec);font-weight:300;
+      line-height:1.7;color:var(--text-sec);font-weight:300;
       flex:1;
     }
-    .cc-author{display:flex;align-items:center;gap:10px;margin-top:auto}
-    .cc-avatar{
-      width:32px;height:32px;border-radius:50%;
-      background:var(--bg-el);display:flex;align-items:center;justify-content:center;
-      font-family:var(--sans);font-size:12px;font-weight:500;color:var(--accent);
-      border:1px solid rgba(143,163,184,0.1);
-    }
-    .cc-meta{display:flex;flex-direction:column;gap:1px}
-    .cc-name{font-family:var(--sans);font-size:12.5px;font-weight:400;color:var(--text)}
-    .cc-loc{font-family:var(--sans);font-size:11px;font-weight:300;color:var(--text-dim);letter-spacing:.02em}
   </style>
 </head>
 
@@ -1961,45 +1969,52 @@
     <div class="customers-track" id="custTrack">
       <!-- card 1 -->
       <div class="customer-card">
-        <div class="cc-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg></div>
-        <p class="cc-quote">&ldquo;Después de 3 semanas, mi recuperación post-entrenamiento cambió por completo. Duermo mejor, rindo más. No es lujo — es infraestructura.&rdquo;</p>
-        <div class="cc-author"><div class="cc-avatar">MR</div><div class="cc-meta"><span class="cc-name">Marco R.</span><span class="cc-loc">Guadalajara, JAL</span></div></div>
+        <div class="cc-avatar"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face" alt="Marco R." loading="lazy"></div>
+        <span class="cc-name">Marco R.</span>
+        <span class="cc-loc">Guadalajara, JAL</span>
+        <p class="cc-quote">Después de 3 semanas, mi recuperación post-entrenamiento cambió por completo. Duermo mejor, rindo más. No es lujo — es infraestructura.</p>
       </div>
       <!-- card 2 -->
       <div class="customer-card">
-        <div class="cc-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg></div>
-        <p class="cc-quote">&ldquo;Lo instalamos en el gym y los miembros no paran de preguntar por él. En 2 meses ya se pagó solo. El diseño eleva todo el espacio.&rdquo;</p>
-        <div class="cc-author"><div class="cc-avatar">SC</div><div class="cc-meta"><span class="cc-name">Sofía C.</span><span class="cc-loc">Ciudad de México</span></div></div>
+        <div class="cc-avatar"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&crop=face" alt="Sofía C." loading="lazy"></div>
+        <span class="cc-name">Sofía C.</span>
+        <span class="cc-loc">Ciudad de México</span>
+        <p class="cc-quote">Lo instalamos en el gym y los miembros no paran de preguntar por él. En 2 meses ya se pagó solo. El diseño eleva todo el espacio.</p>
       </div>
       <!-- card 3 -->
       <div class="customer-card">
-        <div class="cc-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg></div>
-        <p class="cc-quote">&ldquo;Tenía dudas por el precio, pero la calidad de construcción y el sistema de enfriamiento son de otro nivel. Cero arrepentimiento.&rdquo;</p>
-        <div class="cc-author"><div class="cc-avatar">DL</div><div class="cc-meta"><span class="cc-name">Daniel L.</span><span class="cc-loc">Monterrey, NL</span></div></div>
+        <div class="cc-avatar"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&crop=face" alt="Daniel L." loading="lazy"></div>
+        <span class="cc-name">Daniel L.</span>
+        <span class="cc-loc">Monterrey, NL</span>
+        <p class="cc-quote">Tenía dudas por el precio, pero la calidad de construcción y el sistema de enfriamiento son de otro nivel. Cero arrepentimiento.</p>
       </div>
       <!-- card 4 -->
       <div class="customer-card">
-        <div class="cc-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg></div>
-        <p class="cc-quote">&ldquo;Mis clientes del spa lo aman. La temperatura se mantiene perfecta todo el día. El ROI fue mucho más rápido de lo que esperaba.&rdquo;</p>
-        <div class="cc-author"><div class="cc-avatar">AV</div><div class="cc-meta"><span class="cc-name">Andrea V.</span><span class="cc-loc">Querétaro, QRO</span></div></div>
+        <div class="cc-avatar"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face" alt="Andrea V." loading="lazy"></div>
+        <span class="cc-name">Andrea V.</span>
+        <span class="cc-loc">Querétaro, QRO</span>
+        <p class="cc-quote">Mis clientes del spa lo aman. La temperatura se mantiene perfecta todo el día. El ROI fue mucho más rápido de lo que esperaba.</p>
       </div>
       <!-- card 5 -->
       <div class="customer-card">
-        <div class="cc-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg></div>
-        <p class="cc-quote">&ldquo;Después de probarlo en un hotel boutique en Tulum, lo traje a mi casa. La diferencia en calidad de sueño es absurda.&rdquo;</p>
-        <div class="cc-author"><div class="cc-avatar">JP</div><div class="cc-meta"><span class="cc-name">Javier P.</span><span class="cc-loc">Mérida, YUC</span></div></div>
+        <div class="cc-avatar"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face" alt="Javier P." loading="lazy"></div>
+        <span class="cc-name">Javier P.</span>
+        <span class="cc-loc">Mérida, YUC</span>
+        <p class="cc-quote">Después de probarlo en un hotel boutique en Tulum, lo traje a mi casa. La diferencia en calidad de sueño es absurda.</p>
       </div>
       <!-- card 6 -->
       <div class="customer-card">
-        <div class="cc-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg></div>
-        <p class="cc-quote">&ldquo;Lo compré para mi centro de CrossFit. Los atletas hacen fila para usarlo. Ya recuperé la inversión en el tercer mes.&rdquo;</p>
-        <div class="cc-author"><div class="cc-avatar">RM</div><div class="cc-meta"><span class="cc-name">Roberto M.</span><span class="cc-loc">León, GTO</span></div></div>
+        <div class="cc-avatar"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&h=200&fit=crop&crop=face" alt="Roberto M." loading="lazy"></div>
+        <span class="cc-name">Roberto M.</span>
+        <span class="cc-loc">León, GTO</span>
+        <p class="cc-quote">Lo compré para mi centro de CrossFit. Los atletas hacen fila para usarlo. Ya recuperé la inversión en el tercer mes.</p>
       </div>
       <!-- card 7 -->
       <div class="customer-card">
-        <div class="cc-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg></div>
-        <p class="cc-quote">&ldquo;La entrega fue impecable y la instalación tomó 20 minutos. Cada mañana a las 5am me meto 3 minutos. Ritual no negociable.&rdquo;</p>
-        <div class="cc-author"><div class="cc-avatar">KT</div><div class="cc-meta"><span class="cc-name">Karla T.</span><span class="cc-loc">Puebla, PUE</span></div></div>
+        <div class="cc-avatar"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&h=200&fit=crop&crop=face" alt="Karla T." loading="lazy"></div>
+        <span class="cc-name">Karla T.</span>
+        <span class="cc-loc">Puebla, PUE</span>
+        <p class="cc-quote">La entrega fue impecable y la instalación tomó 20 minutos. Cada mañana a las 5am me meto 3 minutos. Ritual no negociable.</p>
       </div>
     </div>
   </section>
@@ -2089,6 +2104,26 @@
         <h2 class="ev-headline a-rise d1">No lo decimos nosotros. <em>Lo dice la ciencia.</em></h2>
       </div>
 
+      <div class="ev-video-row">
+        <div class="ev-video-wrap a-fade">
+          <iframe src="https://www.youtube.com/embed/pq6WHJzOkno" title="Huberman Lab: Deliberate Cold Exposure"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen loading="lazy">
+          </iframe>
+        </div>
+        <div class="ev-video-text">
+          <p class="ev-label a-rise">Escúchalo de los expertos</p>
+          <h3 class="ev-video-title a-rise d1">Andrew Huberman<br>sobre cold exposure.</h3>
+          <p class="ev-video-body a-rise d2">El neurocientífico de Stanford explica los mecanismos, los protocolos y la
+            dosis mínima efectiva: <strong style="color:var(--white);font-weight:500">~11 minutos por semana</strong> en
+            2-4 sesiones.</p>
+          <div class="ev-video-meta a-rise d3">
+            Huberman Lab Podcast — Ep. #66<br>
+            Stanford University School of Medicine
+          </div>
+        </div>
+      </div>
+
       <div class="ev-stats">
         <div class="ev-stat a-rise">
           <div class="ev-stat-num" data-count="530">0<span class="unit">%</span></div>
@@ -2107,26 +2142,6 @@
           <div class="ev-stat-claim">Ensayos clínicos analizados</div>
           <div class="ev-stat-source">Red de meta-análisis más completa<br>sobre recuperación con agua fría.<br><em
               style="font-size:inherit;color:var(--text-dim)">Wang et al. — Frontiers in Physiology, 2025</em></div>
-        </div>
-      </div>
-
-      <div class="ev-video-row">
-        <div class="ev-video-wrap a-fade">
-          <iframe src="https://www.youtube.com/embed/pq6WHJzOkno" title="Huberman Lab: Deliberate Cold Exposure"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen loading="lazy">
-          </iframe>
-        </div>
-        <div class="ev-video-text">
-          <p class="ev-label a-rise">Escúchalo de los expertos</p>
-          <h3 class="ev-video-title a-rise d1">Andrew Huberman<br>sobre cold exposure.</h3>
-          <p class="ev-video-body a-rise d2">El neurocientífico de Stanford explica los mecanismos, los protocolos y la
-            dosis mínima efectiva: <strong style="color:var(--white);font-weight:500">~11 minutos por semana</strong> en
-            2-4 sesiones.</p>
-          <div class="ev-video-meta a-rise d3">
-            Huberman Lab Podcast — Ep. #66<br>
-            Stanford University School of Medicine
-          </div>
         </div>
       </div>
 
