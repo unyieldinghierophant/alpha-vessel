@@ -292,23 +292,42 @@
     .btn-p {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 10px;
       font-family: var(--sans);
       font-size: 0.72rem;
-      font-weight: 500;
+      font-weight: 600;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--white);
-      background: transparent;
-      padding: 15px 38px;
-      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #FFFFFF !important;
+      background: linear-gradient(135deg, #7FA7C4 0%, #A2C8E4 100%);
+      padding: 16px 38px;
+      border: none;
+      border-radius: 8px;
       cursor: pointer;
-      transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      text-shadow: 0 1px 2px rgba(0,0,0,0.15);
+      transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
     .btn-p:hover {
-      border-color: rgba(255, 255, 255, 0.55);
-      background: rgba(255, 255, 255, 0.04);
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 8px 24px rgba(162, 200, 228, 0.4);
+    }
+
+    .mobile-sticky-cta {
+      display: none;
+      position: fixed;
+      bottom: 16px;
+      left: 16px;
+      right: 16px;
+      z-index: 998;
+      width: calc(100% - 32px);
+    }
+    
+    @media (max-width: 768px) {
+      .mobile-sticky-cta {
+        display: flex;
+      }
     }
 
     .btn-s {
@@ -1710,76 +1729,6 @@
       }
     }
 
-    /* ====== CUSTOMER CAROUSEL ====== */
-    .customers{
-      padding:clamp(40px,6vw,64px) 0;
-      overflow:hidden;
-      position:relative;
-      border-bottom:1px solid rgba(143,163,184,0.04);
-    }
-    .customers-top{
-      display:flex;align-items:center;justify-content:space-between;
-      padding:0 clamp(20px,4vw,48px);
-      margin-bottom:clamp(20px,3vw,32px);
-    }
-    .customers-label{
-      font-family:var(--sans);font-size:11px;letter-spacing:.18em;
-      text-transform:uppercase;color:var(--text-dim);font-weight:400;
-    }
-    .customers-drag{
-      font-family:var(--sans);font-size:11px;letter-spacing:.12em;
-      text-transform:uppercase;color:var(--text-dim);font-weight:300;
-      display:flex;align-items:center;gap:6px;
-    }
-    .customers-drag svg{width:14px;height:14px;stroke:var(--text-dim);fill:none;stroke-width:1.5}
-
-    .customers-track{
-      display:flex;gap:clamp(14px,2vw,20px);
-      padding:0 clamp(20px,4vw,48px);
-      cursor:grab;user-select:none;
-      will-change:transform;
-    }
-    .customers-track.dragging{cursor:grabbing}
-
-    .customer-card{
-      flex:0 0 auto;
-      width:clamp(260px,28vw,320px);
-      background:var(--bg-card);
-      border:1px solid rgba(143,163,184,0.06);
-      border-radius:16px;
-      padding:clamp(28px,3vw,36px) clamp(20px,2.5vw,28px);
-      display:flex;flex-direction:column;align-items:center;
-      text-align:center;gap:16px;
-      transition:border-color .3s,box-shadow .3s;
-    }
-    .customer-card:hover{
-      border-color:rgba(143,163,184,0.14);
-      box-shadow:0 8px 32px rgba(0,0,0,0.25);
-    }
-    .cc-avatar{
-      width:clamp(80px,10vw,110px);height:clamp(80px,10vw,110px);
-      border-radius:50%;overflow:hidden;
-      border:3px solid rgba(143,163,184,0.12);
-      flex-shrink:0;
-    }
-    .cc-avatar img{
-      width:100%;height:100%;object-fit:cover;
-      display:block;
-    }
-    .cc-name{
-      font-family:var(--sans);font-size:clamp(15px,1.3vw,17px);
-      font-weight:500;color:var(--text);line-height:1.2;
-    }
-    .cc-loc{
-      font-family:var(--sans);font-size:11px;font-weight:300;
-      color:var(--text-dim);letter-spacing:.04em;
-      margin-top:-8px;
-    }
-    .cc-quote{
-      font-family:var(--sans);font-size:clamp(13px,1.1vw,14.5px);
-      line-height:1.7;color:var(--text-sec);font-weight:300;
-      flex:1;
-    }
   </style>
 </head>
 
@@ -1940,8 +1889,8 @@
         <span></span>
         <span></span>
       </div>
-      <a href="https://wa.me/523310000000?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20Alpha%20Vessel"
-        target="_blank" class="nav-cta">Solicitar Información</a>
+      <a href="https://wa.me/523325520551?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20Alpha%20Vessel"
+        target="_blank" class="nav-cta">Contacta a nuestro equipo de ventas</a>
 
     </div>
   </nav>
@@ -1959,8 +1908,8 @@
 
 
       <div class="hero-ctas a-rise" style="transition-delay:1.2s">
-        <a href="https://wa.me/523310000000?text=Hola%2C%20me%20interesa%20Alpha%20Vessel" target="_blank"
-          class="btn-wa-hero">
+        <a href="https://wa.me/523325520551?text=Hola%2C%20me%20interesa%20Alpha%20Vessel" target="_blank"
+          class="btn-p btn-wa-hero">
           <svg class="wa-icon" viewBox="0 0 24 24">
             <path
               d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
@@ -2188,8 +2137,8 @@
         <div class="split-list-item"><span class="dash">—</span><span>Tu hogar como destino de bienestar y ritual social</span></div>
         <div class="split-list-item"><span class="dash">—</span><span>Un objeto de diseño que eleva cualquier espacio</span></div>
       </div>
-      <a href="https://wa.me/523310000000?text=Hola%2C%20me%20interesa%20Alpha%20Vessel%20para%20mi%20hogar"
-        target="_blank" class="btn-p a-rise d3" style="margin-top:32px;align-self:flex-start">Cotiza para tu hogar</a>
+      <a href="https://wa.me/523325520551?text=Hola%2C%20me%20interesa%20Alpha%20Vessel%20para%20mi%20hogar"
+        target="_blank" class="btn-p a-rise d3" style="margin-top:32px;align-self:flex-start">Obtén tu cold plunge esta semana</a>
     </div>
     <div class="split-img" style="background-image:url('assets/images/a33-min.jpg')"></div>
   </section>
@@ -2215,8 +2164,8 @@
         <div class="split-list-item"><span class="dash">—</span><span>Filtración y desinfección de grado comercial para uso diario compartido</span></div>
         <div class="split-list-item"><span class="dash">—</span><span>Retorno potencial: ~$25,000 MXN/mes con solo 3 sesiones diarias a $350</span></div>
       </div>
-      <a href="https://wa.me/523310000000?text=Hola%2C%20me%20interesa%20Alpha%20Vessel%20para%20mi%20negocio"
-        target="_blank" class="btn-p a-rise d3" style="margin-top:32px;align-self:flex-start">Cotiza para tu negocio</a>
+      <a href="https://wa.me/523325520551?text=Hola%2C%20me%20interesa%20Alpha%20Vessel%20para%20mi%20negocio"
+        target="_blank" class="btn-p a-rise d3" style="margin-top:32px;align-self:flex-start">Obtén tu cold plunge esta semana</a>
     </div>
   </section>
 
@@ -2269,8 +2218,8 @@
           <div class="gdl-label">Envío nacional</div>
         </div>
       </div>
-      <a href="https://wa.me/523310000000?text=Hola%2C%20quiero%20reservar%20una%20unidad%20Alpha%20Vessel"
-        target="_blank" class="btn-p a-rise" style="margin-top:52px">Reservar mi unidad</a>
+      <a href="https://wa.me/523325520551?text=Hola%2C%20quiero%20reservar%20una%20unidad%20Alpha%20Vessel"
+        target="_blank" class="btn-p a-rise" style="margin-top:52px">Contacta a nuestro equipo de ventas</a>
     </div>
   </section>
 
@@ -2361,7 +2310,7 @@
       <p class="t-body a-rise d2">No es solo un producto. Es un compromiso con una forma distinta de recuperarte, de
         vivir y de liderar.</p>
       <div class="final-cta-btns a-rise d3">
-        <a href="https://wa.me/523310000000?text=Hola%2C%20quiero%20información%20sobre%20Alpha%20Vessel"
+        <a href="https://wa.me/523325520551?text=Hola%2C%20quiero%20información%20sobre%20Alpha%20Vessel"
           target="_blank" class="btn-p">
           <svg class="wa-icon" viewBox="0 0 24 24">
             <path
@@ -2369,7 +2318,7 @@
             <path
               d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.612.638l4.716-1.244A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.24 0-4.31-.726-5.993-1.956l-.418-.313-3.06.807.822-3.002-.344-.447A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
           </svg>
-          WhatsApp — Reservar ahora</a>
+          Contacta a nuestro equipo de ventas</a>
         <span class="form-toggle" onclick="document.querySelector('.lead-form').classList.toggle('active')">O deja tus
           datos aquí ↓</span>
       </div>
@@ -2397,7 +2346,7 @@
     </div>
   </footer>
 
-  <a href="https://wa.me/523310000000?text=Hola%2C%20me%20interesa%20Alpha%20Vessel" target="_blank" class="wa-float"
+  <a href="https://wa.me/523325520551?text=Hola%2C%20me%20interesa%20Alpha%20Vessel" target="_blank" class="wa-float"
     aria-label="WhatsApp">
     <svg viewBox="0 0 24 24">
       <path
@@ -2535,6 +2484,9 @@
       track.parentElement.addEventListener('mouseleave',function(){paused=false;});
     })();
   </script>
+  <a href="https://wa.me/523325520551?text=Hola%2C%20me%20interesa%20Alpha%20Vessel" target="_blank" class="btn-p mobile-sticky-cta">
+    Contacta a nuestro equipo de ventas
+  </a>
 </body>
 
 </html>
