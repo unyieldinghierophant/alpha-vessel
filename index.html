@@ -406,6 +406,7 @@
       transform: translate3d(-50%, -50%, 0) scale(1.05);
       pointer-events: none;
       z-index: 0;
+      object-fit: cover;
     }
 
     .hero-overlay {
@@ -1906,9 +1907,9 @@
 
   <section class="hero" id="hero">
     <div class="hero-bg-layer" id="heroBg"></div>
-    <iframe class="hero-bg-video"
-      src="https://www.youtube.com/embed/Thm9gH2Nhxg?autoplay=1&mute=1&controls=0&loop=1&playlist=Thm9gH2Nhxg&rel=0&showinfo=0&modestbranding=1&playsinline=1"
-      frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <video class="hero-bg-video" autoplay muted loop playsinline>
+      <source src="assets/Video/alpha-vessel-bg-compressed.mp4" type="video/mp4">
+    </video>
     <div class="hero-overlay"></div>
     <div class="hero-grain"></div>
     <div class="container hero-content" id="heroContent">
